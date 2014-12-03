@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TC.NuGet.Modules", "TC.NuGet.Modules\TC.NuGet.Modules.csproj", "{5E31C568-3BC1-43D0-A38B-E62153A689D4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{C0ED4655-8DE8-4CD9-A340-12043D1BCD38}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\packages.config = .nuget\packages.config
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{88FF706D-94C2-4CF0-A96D-DB75F30B0700}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+		test.xml = test.xml
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5E31C568-3BC1-43D0-A38B-E62153A689D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E31C568-3BC1-43D0-A38B-E62153A689D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E31C568-3BC1-43D0-A38B-E62153A689D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E31C568-3BC1-43D0-A38B-E62153A689D4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
