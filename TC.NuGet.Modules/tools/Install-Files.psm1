@@ -1,4 +1,4 @@
-function Copy-Files
+function install-Files
 {
 	param($installPath, $project, $folder)
 

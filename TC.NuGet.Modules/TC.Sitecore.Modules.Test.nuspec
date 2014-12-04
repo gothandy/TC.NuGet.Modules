@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>TC.Nuget.Modules.Test</id>
+    <version>1.0.0.0</version>
+    <title>NuGet Modules (TEST)(</title>
+    <authors>Andrew Davies</authors>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Various tools for install/uninstall powershell scripts.</description>
+    <licenseUrl>https://github.com/gothandy/TC.NuGet.Modules/blob/master/LICENSE.md</licenseUrl>
+    <projectUrl>https://github.com/gothandy/TC.NuGet.Modules</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/gothandy/TC.NuGet.Modules/master/favicon.ico</iconUrl>
+  </metadata>
+  <files>
+    <file src="lib\**\*.*" target="lib\" />
+    <file src="tools\**\*.*" target="tools\" exclude="**\init.ps1"/>
+    <file src="test\install.ps1" target="tools\install.ps1" />
+  </files>
+</package>

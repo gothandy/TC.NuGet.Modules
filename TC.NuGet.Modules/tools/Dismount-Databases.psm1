@@ -1,19 +1,17 @@
 function Dismount-Databases
 {
-	param($project, $database, $config, $sqlInstanceName, $replace, $with)
+	param($project, $folder, $instance, $replace, $with)
 
-	#$database = "App_Data\databases"
-	#$config = "App_Config\ConnectionStrings.config"
+	#$folder = "App_Data\databases"
 	#$replace = "Sitecore."
 	#$with = "."
 
 	$projectFolderName = Split-Path -parent $project.FileName
 	$projectName = $project.Name
-	$databaseFolder = Join-Path $projectFolderName $database
-	$connectionStringsFileName = Join-Path $projectFolderName $config
+	$databaseFolder = Join-Path $projectFolderName $folder
 
 	[System.Reflection.Assembly]::LoadWithPartialName('Microsoft.SqlServer.Smo') | out-null
-	$server = new-Object Microsoft.SqlServer.Management.Smo.Server($sqlInstanceName)
+	$server = new-Object Microsoft.SqlServer.Management.Smo.Server($instance)
 	if ($server -eq $null)
 	{
 		Write-Host "Cannot connect to SQL Server Instance";

@@ -35,20 +35,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="TC.Sitecore.Modules.Test.nuspec" />
     <None Include="TC.Sitecore.Modules.nuspec" />
-    <None Include="test\Get-SolutionContent-Test.ps1" />
-    <None Include="test\Copy-Files-Test.ps1" />
     <None Include="test\Remove-Files-Test.ps1" />
+    <None Include="test\Get-SolutionContent-Test.ps1" />
+    <None Include="test\Install-Files-Test.ps1" />
+    <None Include="test\install.ps1" />
+    <None Include="test\Uninstall-Files-Test.ps1" />
+    <None Include="tools\Remove-Files.psm1" />
+    <None Include="tools\Set-AssemblyReferencesCopyLocal.psm1" />
     <None Include="tools\Mount-Databases.psm1" />
     <None Include="tools\Get-SolutionContent.psm1" />
-    <None Include="tools\Copy-Files.psm1" />
+    <None Include="tools\Install-Files.psm1" />
     <None Include="tools\Dismount-Databases.psm1" />
     <None Include="tools\Grant-EveryoneFullControl.psm1" />
     <None Include="tools\init.ps1" />
-    <None Include="tools\Remove-Files.psm1" />
+    <None Include="tools\Uninstall-Files.psm1" />
     <None Include="tools\Set-ConnectionStrings.psm1" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="lib\net45\Lucene.Net.dll" />
+    <Content Include="test\empty.txt" />
     <Content Include="package\sitecore\readme.txt" />
   </ItemGroup>
   <ItemGroup>

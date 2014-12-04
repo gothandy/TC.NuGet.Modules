@@ -1,9 +1,8 @@
 function Mount-Databases
 {
-	param($project, $database, $config, $sqlInstanceName, $sqlOwner, $replace, $with)
+	param($project, $folder, $instance, $owner, $replace, $with)
 
 	#$database = "App_Data\databases"
-	#$config = "App_Config\ConnectionStrings.config"
 	#$replace = "Sitecore."
 	#$with = "."
 
@@ -14,11 +13,11 @@ function Mount-Databases
                          
 	[System.Reflection.Assembly]::LoadWithPartialName('Microsoft.SqlServer.Smo') | out-null;
 
-	$server = New-Object Microsoft.SqlServer.Management.Smo.Server($sqlInstanceName);
+	$server = New-Object Microsoft.SqlServer.Management.Smo.Server($instance);
 
 	if ($server -eq $null)
 	{
-		Write-Host "Cannot connect to SQL Server: $sqlInstanceName";
+		Write-Host "Cannot connect to SQL Server: $instance";
 		return -1;
 	}
 
@@ -37,7 +36,7 @@ function Mount-Databases
 	  $files.Add($databaseFolder + '\' + $fileName + '.mdf') | out-null;
 	  $files.Add($databaseFolder + '\' + $fileName + '.ldf') | out-null;
 
-	  $server.AttachDatabase($databaseName, $files, $sqlOwner, [Microsoft.SqlServer.Management.Smo.AttachOptions]::None);
+	  $server.AttachDatabase($databaseName, $files, $owner, [Microsoft.SqlServer.Management.Smo.AttachOptions]::None);
 
 	  Write-Host  "Sitecore Databases - $databaseName Attached.";
 	}

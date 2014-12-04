@@ -1,18 +1,12 @@
 $projectPath = "C:\TC\TC.Nuget.Modules\TC.NuGet.Modules"
 
-Remove-Module "Copy-Files" -ErrorAction Ignore
-Remove-Module "Remove-Files" -ErrorAction Ignore
-Import-Module (Join-Path $projectPAth "tools\Copy-Files.psm1") -Verbose -NoClobber
+Remove-Module "Remove-Files"
 Import-Module (Join-Path $projectPAth "tools\Remove-Files.psm1") -Verbose -NoClobber
 
 $installPath = (Join-Path $projectPath "package\")
 
-$project = [PSCustomObject]@{
-    FileName = Join-Path $projectPath "project\project.csproj"
-}
+Copy-Item "empty.txt" "../package/sitecore/"
+New-Item -Path "../package/sitecore/empty" -ItemType Directory -Force
+Copy-Item "empty.txt" "../package/sitecore/empty/"
 
-Copy-Files $installPath $project "sitecore"
-Get-Item ($projectPath + "\project\*")
-
-Remove-Files $installPath $project "sitecore"
-Get-Item ($projectPath + "\project\*")
+Remove-Files $installPath "sitecore/**/empty.txt"
