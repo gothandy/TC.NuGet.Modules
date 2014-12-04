@@ -49,9 +49,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="databases\ConnectionStrings.config" />
     <None Include="packages.config" />
     <None Include="TC.Sitecore.Modules.Test.nuspec" />
     <None Include="TC.Sitecore.Modules.nuspec" />
+    <None Include="test\Set-ConnectionStrings-Test.ps1" />
     <None Include="test\Mount-Databases-Test.ps1" />
     <None Include="test\Remove-Files-Test.ps1" />
     <None Include="test\Get-SolutionContent-Test.ps1" />
