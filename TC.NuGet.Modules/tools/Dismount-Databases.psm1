@@ -23,7 +23,7 @@ function Dismount-Databases
 	{   
   
 	  $server.DetachDatabase($databaseName, $False);
-	  Write-Host "Sitecore Databases - $databasename detached.";
+	  Write-Host "DetachDatabase $databasename";
 	}
 
 	foreach ($file in (dir $databaseFolder\*.mdf)){

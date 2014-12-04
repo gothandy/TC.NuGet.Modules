@@ -3,7 +3,7 @@
   <metadata>
     <id>TC.Nuget.Modules.Test</id>
     <version>1.0.0.0</version>
-    <title>NuGet Modules (TEST)(</title>
+    <title>NuGet Modules [TEST]</title>
     <authors>Andrew Davies</authors>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Various tools for install/uninstall powershell scripts.</description>

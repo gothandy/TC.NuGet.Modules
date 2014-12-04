@@ -8,8 +8,7 @@ function Mount-Databases
 
 	$projectFolder = Split-Path -parent $project.FileName
 	$projectName = $project.Name
-	$databaseFolder = Join-Path $projectFolder $database
-	$connectionStringsFileName = Join-Path $projectFolder $config
+	$databaseFolder = Join-Path $projectFolder $folder
                          
 	[System.Reflection.Assembly]::LoadWithPartialName('Microsoft.SqlServer.Smo') | out-null;
 
@@ -38,7 +37,7 @@ function Mount-Databases
 
 	  $server.AttachDatabase($databaseName, $files, $owner, [Microsoft.SqlServer.Management.Smo.AttachOptions]::None);
 
-	  Write-Host  "Sitecore Databases - $databaseName Attached.";
+	  Write-Host  "AttachDatabase $databaseName";
 	}
 
 	foreach ($file in (dir $databaseFolder\*.mdf))
