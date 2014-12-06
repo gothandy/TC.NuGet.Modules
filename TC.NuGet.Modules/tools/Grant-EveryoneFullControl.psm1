@@ -10,5 +10,5 @@ function Grant-EveryoneFullControl
 
 	Set-Acl $folder $acl;
 
-	Write-Host "Everyone has full control to $folder!";
+	Write-Host "Everyone has full control to $folder";
 }

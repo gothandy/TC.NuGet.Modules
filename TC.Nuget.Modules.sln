@@ -11,7 +11,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		test.xml = test.xml
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TC.NuGet.Modules.Test", "TC.NuGet.Modules.Test\TC.NuGet.Modules.Test.csproj", "{6E17B653-AD58-4A1A-811F-0FD121731151}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.TC.NuGet.Modules", "TC.NuGet.Modules.Test\Test.TC.NuGet.Modules.csproj", "{6E17B653-AD58-4A1A-811F-0FD121731151}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -5,51 +5,55 @@ function Uninstall-Files
 	$sitecoreFolder = Join-Path $installPath $folder;
 	$projectFolder = Split-Path -parent $project.FileName;
 
-	function deleteIfSitecoreFile ($projectObject)
+	function deleteFileFromProject ($sitecoreObject)
 	{
-		$commonPath = $projectObject.FullName.Substring($projectFolder.Length)
-		$sitecorePath = Join-Path $sitecoreFolder $commonPath
+		$commonPath = $sitecoreObject.FullName.Substring($sitecoreFolder.Length)
+		$projectPath = Join-Path $projectFolder $commonPath
 
-		if (Test-Path $sitecorePath)
+		if (Test-Path $projectPath)
 		{
-			$sitecoreObject = Get-Item -Path $sitecorePath
+			$projectObject = Get-Item -Path $projectPath
 
-			if ($projectObject.LastWriteTime -eq $sitecoreObject.LastWriteTime)
+			if ($sitecoreObject.LastWriteTime -eq $projectObject.LastWriteTime)
 			{
-				$projectObject.Delete();
+				Remove-Item $projectPath -Force
 			}
 			else
 			{
-				Write-Host "Sitecore file modified " $commonPath
+				Write-Host "File modified" $commonPath
 			}
 		}
 	}
 
-	function deleteIfSitecoreFolder ($projectObject)
+	function deleteFolderFromProject ($sitecoreObject)
 	{
+		$commonPath = $sitecoreObject.FullName.Substring($sitecoreFolder.Length)
+		$projectPath = Join-Path $projectFolder $commonPath
 
-		if ($projectObject.GetDirectories().Count -eq 0)
+		if (Test-Path $projectPath)
 		{
-			$commonPath = $projectObject.FullName.Substring($projectFolder.Length)
-			$sitecorePath = Join-Path $sitecoreFolder $commonPath
+			$projectObject = Get-Item -Path $projectPath
 
-			if ((Test-Path $sitecorePath) -or ($projectObject.Name -eq "debug"))
+			if (($projectObject.GetDirectories().Count -eq 0) -and ($projectObject.GetFiles().Count -eq 0))
 			{
-				$projectObject.Delete();
+				Remove-Item $projectPath -Force
+			}
+			else
+			{
+				Write-Host "Folder not empty" $commonPath
 			}
 		}
 	}
 
 	Write-Host "Remove Files."
-	Get-ChildItem -Path $projectFolder -Recurse -File |
-	ForEach-Object { deleteIfSitecoreFile($_) }
+	Get-ChildItem -Path $sitecoreFolder -Recurse -File |
+	ForEach-Object { deleteFileFromProject($_) }
 
+    #Sort by deepest folders first.
 	Write-Host "Remove Folders."
-	Get-ChildItem -Path $projectFolder -Recurse -Directory |
-	Where-Object { $_.GetFiles().Count -eq 0 } |
+	Get-ChildItem -Path $sitecoreFolder -Recurse -Directory |
 	sort -Property @{ Expression = {$_.FullName.Split('\').Count} } -Desc |
-	ForEach-Object { deleteIfSitecoreFolder($_) }
-
+	ForEach-Object { deleteFolderFromProject($_) }
 }
 
 

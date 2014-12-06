@@ -51,19 +51,23 @@
   <ItemGroup>
     <None Include="databases\ConnectionStrings.config" />
     <None Include="packages.config" />
-    <None Include="TC.Sitecore.Modules.Test.nuspec" />
-    <None Include="TC.Sitecore.Modules.nuspec" />
+    <None Include="Test.TC.Sitecore.Modules.nuspec">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TC.Sitecore.Modules.nuspec">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="test\Set-ConnectionStrings-Test.ps1" />
     <None Include="test\Mount-Databases-Test.ps1" />
     <None Include="test\Remove-Files-Test.ps1" />
-    <None Include="test\Get-SolutionContent-Test.ps1" />
+    <None Include="test\Get-Config-Test.ps1" />
     <None Include="test\Install-Files-Test.ps1" />
     <None Include="test\install.ps1" />
     <None Include="test\Uninstall-Files-Test.ps1" />
     <None Include="tools\Remove-Files.psm1" />
     <None Include="tools\Set-AssemblyReferencesCopyLocal.psm1" />
     <None Include="tools\Mount-Databases.psm1" />
-    <None Include="tools\Get-SolutionContent.psm1" />
+    <None Include="tools\Get-Config.psm1" />
     <None Include="tools\Install-Files.psm1" />
     <None Include="tools\Dismount-Databases.psm1" />
     <None Include="tools\Grant-EveryoneFullControl.psm1" />
@@ -80,12 +84,14 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="lib\net45\Lucene.Net.dll" />
+    <Content Include="package\sitecore\folder1\1.1.txt" />
+    <Content Include="package\sitecore\folder2\2.1.txt" />
     <Content Include="package\sitecore\readme.txt" />
+    <Content Include="project\folder2\2.2.txt" />
     <Content Include="test\empty.txt" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="package\sitecore\empty\" />
-    <Folder Include="project\" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5">

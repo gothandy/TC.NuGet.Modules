@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
-    <id>TC.Nuget.Modules.Test</id>
+    <id>Test.TC.Nuget.Modules</id>
     <version>1.0.0.0</version>
-    <title>NuGet Modules [TEST]</title>
+    <title>[Test] NuGet Modules</title>
     <authors>Andrew Davies</authors>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Various tools for install/uninstall powershell scripts.</description>
